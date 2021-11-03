@@ -15,6 +15,48 @@
 {% extends "base_template.html" %}
 {% block title %}Home Page{% endblock %}
 {% block content %}
-    <iframe src="https://goldbroker.com/widget/live/XAU?currency=PLN&height=320" scrolling="no" frameborder="0" width="100%" height="320" style="border: 0; overflow: hidden;"></iframe></a>
-    <iframe src="https://goldbroker.com/widget/live/XAG?currency=PLN&height=320" scrolling="no" frameborder="0" width="100%" height="320" style="border: 0; overflow: hidden;"></iframe></a>
+<H1>Aktualne Kursy z NBP </H1>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="card" style="width: 18rem;">
+  <img src="{{url_for('static', filename='USA.png')}}" class="card-img-top" alt="..." width="80" height="144">
+  <div class="card-body">
+    <h3 class="card-title">USD {{ DATA }}</h3>
+    <p class="card-text">
+    <h4>{{ USD_BUY }} <span class="badge bg-secondary">SKUP</span></h4>
+    <h4>{{ USD_SALE }} <span class="badge bg-secondary">SPRZEDAŻ</span></h4>
+    </p>
+  </div>
+</div>
+    </div>
+    <div class="col">
+      <div class="card" style="width: 18rem;">
+  <img src="{{url_for('static', filename='CHF.png')}}" class="card-img-top" alt="..." width="50" height="144">
+  <div class="card-body">
+    <h3 class="card-title">CHF {{ DATA }}</h3>
+    <p class="card-text">
+    <h4>{{ CHF_BUY }} <span class="badge bg-secondary">SKUP</span></h4>
+    <h4>{{ CHF_SALE }} <span class="badge bg-secondary">SPRZEDAŻ</span></h4>
+    </p>
+  </div>
+</div>
+    </div>
+    <div class="col">
+      <div class="card" style="width: 18rem;">
+  <img src="{{url_for('static', filename='EURO.png')}}" class="card-img-top" alt="..." width="50" height="144">
+  <div class="card-body">
+    <h3 class="card-title">EUR {{ DATA }}</h3>
+    <p class="card-text">
+    <h4>{{ EURO_BUY }} <span class="badge bg-secondary">SKUP</span></h4>
+    <h4>{{ EURO_SALE }} <span class="badge bg-secondary">SPRZEDAŻ</span></h4>
+    </p>
+  </div>
+</div>
+    </div>
+  </div>
+</div>
+<!--<h1>Example heading <span class="badge bg-secondary">New</span></h1>-->
+<!--<h1>Example heading <span class="badge bg-secondary">New</span></h1>-->
+<!--<h1>Example heading <span class="badge bg-secondary">New</span></h1>-->
 {% endblock %}

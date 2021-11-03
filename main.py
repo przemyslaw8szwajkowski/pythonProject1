@@ -1,7 +1,9 @@
 # Importing flask module in the project is mandatory
 # An object of Flask class is our WSGI application.
-from flask import Flask, render_template
+from datetime import date
 
+from flask import Flask, render_template
+import GetCurrency
 # Flask constructor takes the name of
 # current module (__name__) as argument.
 app = Flask(__name__)
@@ -12,7 +14,7 @@ app = Flask(__name__)
 # the associated function.
 @app.route('/')
 def Home():
-    return render_template('index.html', content="Hello World!")
+    return render_template('index.html',DATA = date.today() ,USD_SALE = GetCurrency.GetCurrencyTodayRatesAsk("USD"), CHF_SALE = GetCurrency.GetCurrencyTodayRatesAsk("CHF"), EURO_SALE = GetCurrency.GetCurrencyTodayRatesAsk("EUR"), USD_BUY = GetCurrency.GetCurrencyTodayRatesBid('USD'), EURO_BUY =GetCurrency.GetCurrencyTodayRatesBid('EUR'), CHF_BUY=GetCurrency.GetCurrencyTodayRatesBid('CHF'))
 
 @app.route('/gold')
 def Gold():
